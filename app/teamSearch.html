@@ -93,18 +93,18 @@
                      
                      <div class="text-center">
                         <h1>{{currCourse.title}}Team Search</h1>
-                        <p>Search the team by name</p>
+                        <p>Search the team by {{searchBy}}</p>
                      </div>
 
                      <br >
 
                      <div class="text-center">
 
-                        <input id="input_text" type="text" class="input-lg" ng-model="searchTeam[searchBy]">
+                        <input id="input_text" type="text" class="input-lg" ng-model="searchTeam.data[searchBy]">
 						<select ng-model="searchBy">
 							<option value="$">All</option>
 							<option value="name">Name</option>
-							<option value="tag">Tag</option>
+							<option value="description">Description</option>
 						</select>   
                         <br>
                         <em>Enter a name (e.g. COMP3111-L1, COMP3111-L2 or COMP3111H) to join the team</em>
@@ -134,7 +134,7 @@
 										<div class="panel-heading"  style="background:#eee;color:#fff">
 											<div class="row" style="min-height:100px;">
 												<div class="col-xs-9 text-right">
-													<div class="huge">{{q.name}}	</div>
+													<div class="huge">{{q.data.name}}	</div>
 													
 												</div>
 											</div>
@@ -142,10 +142,10 @@
 										</div>
 										<div class="row" style="min-height:100px;">
 											<div class="col-xs-9 ">
-												<div>{{q.description}}	</div>
+												<div>{{q.data.description}}	</div>
 											</div>
 										</div>
-										<a style="cursor: pointer;" >
+										<a style="cursor: pointer;"  ng-click="joinRequest(q.key)">
 											<div class="panel-footer">
 												<span class="pull-left">Join request</span>
 												<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

@@ -9,15 +9,12 @@
 		$scope.userFB=$firebaseArray(userAccount);
 		
 
-	$scope.studentArray=[];
-	
+	$scope.studentArray=[];	
 	$scope.courseSelect="";
 	$scope.studentSelect="";
 
 	$scope.addStudent=function()
-	{
-
-		
+	{	
 		if($scope.courseSelect==""||$scope.studentSelect=="")
 		{
 			alert("some input missed");
@@ -42,33 +39,7 @@
 
 		userAccount.orderByChild("email").equalTo(email).on("child_added", function(data)
 		{
-			var newUserData;
-			if(typeof(data.val().team)!="undefined")
-			{
-				newUserData=
-				{
-					email:"",
-					role:"",
-					userName:"",
-					course:[],
-					team:[]
-				}
-				newUserData.team=data.val().team;
-			}
-			else
-			{
-				newUserData=
-				{
-					email:"",
-					role:"",
-					userName:"",
-					course:[]
-				}
-			}			
-			newUserData.email=data.val().email;
-			newUserData.role=data.val().role;
-			newUserData.userName=data.val().userName;
-			newUserData.course=data.val().course;
+			var newUserData=data.val();
 			
 			if(typeof(newUserData.course)=="undefined")
 			{

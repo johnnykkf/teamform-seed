@@ -1,0 +1,98 @@
+<!doctype html>
+<html ng-app="teamforming">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="teamform, team">
+    <!-- The meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Team Forming Website</title>
+	<!-- libraries and CSS 	  
+		JQuery: Necessary for some bootstrap interactions (v1.12.4 is used)		
+		Bootstrap: Library and CSS for bootstrap framework (v3.3.7 is used)
+		Font-awesome: More icons for the web development (v4.6.3 is used)		
+		site.css: A customized css for our web application. Not from any web framework. 
+	-->
+	        
+    <script src="lib/jquery.min.js"></script>      
+    <script src="lib/bootstrap.min.js"></script>      
+      	  
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">   
+
+      
+    <!-- Customized libraries shared by pages -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<!-- Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/3.0.3/firebase.js"></script>
+	<!-- AngularFire URL: https://github.com/firebase/angularfire -->
+	<script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+
+	<script>
+	  // Initialize Firebase
+	  var config = {
+		apiKey: "AIzaSyB6bC90FN323tYhfGdeesZodkj3jEymAMU",
+		authDomain: "comp3111teamform.firebaseapp.com",
+		databaseURL: "https://comp3111teamform.firebaseio.com",
+		storageBucket: "comp3111teamform.appspot.com",
+		messagingSenderId: "990477328608"
+	  };
+	  firebase.initializeApp(config);
+	  
+	  $(document).ready(function(){
+			//$.get("navbar.html",function(response){
+			//$('#navBar').append(response);
+			//});
+			//$('#wrapper').('navbar.html');
+		});
+	  
+	</script>
+	
+	<!-- global function -->
+	<script src="js/global.js"></script>
+	
+	
+	
+	<!-- Customized CSS shared by pages -->
+	<link href="css/theme.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/dash.css">
+<body>
+<div ng-controller="dashBoardCtrl">
+
+</div>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+		<div id="navBar" ng-controller="wrapperCtrl">
+		<div ng-include="'navbar.html'"></div>
+		</div>
+        <!-- Page Content -->
+		
+		
+		
+		
+       
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    
+	<!-- /#wrapper -->
+<!-- jQuery -->
+    
+
+
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+	
+    </script>
+	
+
+</body>
+</html>
+Contact GitHub 

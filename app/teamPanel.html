@@ -72,6 +72,24 @@
 		
 		{{currCourse.title}} {{joinedTeam.name}}
 		
+			<div ng-if="role=='0'"> 
+			studnet
+			
+			<h3>Team member</h3>
+			<div ng-repeat="q in teamMember">
+			{{q}}
+			</div>
+			<h3>waiting list</h3>
+			<div ng-repeat="q in waitingList">
+			{{q}}<a ng-click="requestHandler(0,q.data.email,q.key)">Accept</a><a ng-click="requestHandler(1,q.data.email,q.key)">Decline</a>
+			</div>
+			</div>
+			<div ng-if="role=='1'"> 
+			teacher
+			
+			</div>
+		
+		
 		
 		</div>
 		
